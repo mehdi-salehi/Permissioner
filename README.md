@@ -1,4 +1,4 @@
-[![](https://jitpack.io/v/mehdi-salehi/ValueSelectorLib.svg)](https://jitpack.io/#mehdi-salehi/ValueSelectorLib)
+[![](https://jitpack.io/v/mehdi-salehi/Permissioner.svg)](https://jitpack.io/#mehdi-salehi/Permissioner)
 
 #Permissioner
 
@@ -16,10 +16,19 @@ request android permissions at runtime in simple way...
 
 ```javascript
 
-dependencies {
-    compile ':1.0.0'
-}
+allprojects {
+		repositories {
+			...
+			maven { url "https://jitpack.io" }
+		}
+	}
 
+```
+and
+```gradle
+	dependencies {
+	        compile 'com.github.mehdi-salehi:Permissioner:1.0.0'
+	}
 ```
 
 
@@ -63,15 +72,3 @@ You will get result to `onPermissionGranted()`, `onPermissionDenied()`
 
 ```
 
-
-<br/>
-
-##Proguard
-If you use proguard, you have to add this code.
-```javascript
--keepattributes *Annotation*
--keepclassmembers class ** {
-    @com.squareup.otto.Subscribe public *;
-    @com.squareup.otto.Produce public *;
-}
-````
